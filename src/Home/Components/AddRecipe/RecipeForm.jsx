@@ -109,7 +109,7 @@ const RecipeForm = (props) => {
             onChange = {props.handleChange}/>
         </div>
             <br />
-            <input  className = "formBtn" type ="submit" value = "Submit" />
+            <input  className = "formBtn" type ="submit" value = "Submit" autoComplete ="off"/>
         </form>
             {/* <p>{props.formData.title}</p>
             <p>{pimage}</p>
