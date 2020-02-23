@@ -24,12 +24,6 @@ class Search extends React.Component {
 
 
 
-    // // this.setState({
-
-    // //      searched: Axios.get(`https://api.edamam.com/search?q=${inputValue}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`)
-    // // })
-
-
     fetchSearch = async (e) => {
         console.log("hi")
         e.preventDefault()
@@ -41,45 +35,37 @@ class Search extends React.Component {
             console.log('Error: ', error)
         }
 
-        // return(
-        // this.state.searched.hits && this.state.searched.hits.map((hit, index) => 
-        //     (
-        //         <div>
-        //             <img src={hit.recipe.image}/>
-        //             <p>{hit.recipe.calories}</p>
-        //         </div>
-        //     ))
-        // )npm
+
 
     }
 
 
     render() {
-      
+
         console.log(this.state.searched.hits && this.state.searched.hits[0].recipe.calories)
 
- const SEARCH =       this.state.searched.hits && this.state.searched.hits.map((hit, index) => 
-            (<div className = "searchContainer">
-               
-            <a href = {hit.recipe.url}>  <img src={hit.recipe.image} className = "foodpic"/>   </a>
-                <h2>{hit.recipe.label}</h2>
-                
-                <p> Calories: {hit.recipe.calories}</p>
-                
-                
-                </div>
-            ))
-      
+        const SEARCH = this.state.searched.hits && this.state.searched.hits.map((hit, index) =>
+            (<div className="searchContainer">
 
-    return (
+                <a href={hit.recipe.url}>  <img src={hit.recipe.image} className="foodpic" />   </a>
+                <h2>{hit.recipe.label}</h2>
+
+                <p> Calories: {hit.recipe.calories}</p>
+
+
+            </div>
+            ))
+
+
+        return (
             <>
-                <form onSubmit={this.fetchSearch} className = "searchForm">
-                    <input className = "searchBtn"type="text" placeholder="Search by ingredient..." value={this.state.inputValue} name="inputValue" onChange={this.handleInput} />
-                    <input className = "submitBtn" type="submit" value = "search" />
+                <form onSubmit={this.fetchSearch} className="searchForm">
+                    <input className="searchBtn" type="text" placeholder="Search by ingredient..." value={this.state.inputValue} autoComplete="off" name="inputValue" onChange={this.handleInput} />
+                    <input className="submitBtn" type="submit" value="search" />
                 </form>
-            <div className = "searchRes"> {SEARCH}</div>
+                <div className="searchRes"> {SEARCH}</div>
             </>
-    )
+        )
 
     }
 }

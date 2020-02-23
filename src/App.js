@@ -16,6 +16,9 @@ function App() {
       </>
       <div className="links">
             <nav>
+            {/* <div className = "search-sec"> 
+          <Search/>
+          </div> */}
               <label className = "tab">
               <NavLink exact activeClassName ="active" className = "tab" to = '/'>
                 HOME

@@ -28,7 +28,7 @@ function Carousel() {
     <Gallery
       style={{
         background: "white",
-        height: "100vh",
+        height: "90vh",
         width: "100vw"
       }}
       index={index}

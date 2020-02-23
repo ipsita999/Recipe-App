@@ -1,16 +1,7 @@
 import React from "react"
 
 const RecipeForm = (props) => {
-    // const { title,
-    //     image,
-    //     calories,
-    //     description,
-    //     ingredients,
-    //     directions,
-    //     vegan,
-    //     vegetarian,
-    //     nonvegetarian,
-    //     keto } = props.formData
+  
     return (
     <main>
         <form  onSubmit = {props.handleSubmit} className = "form">
@@ -108,20 +99,19 @@ const RecipeForm = (props) => {
             placeholder = "ingredients"
             onChange = {props.handleChange}/>
         </div>
+        <br />
+            <div className = "input">
+            <input className = "bar"
+            type = "text"
+            name = "url"
+            value = {props.url}
+            placeholder = "recipe URL"
+            onChange = {props.handleChange}/>
+        </div>
             <br />
             <input  className = "formBtn" type ="submit" value = "Submit" autoComplete = "off"/>
         </form>
-            {/* <p>{props.formData.title}</p>
-            <p>{pimage}</p>
-            <p>{description}</p>
-            <p>{calories}</p>
-            <p>{ingredients}</p>
-            <p>{directions}</p>
-            <p>It is:</p>
-            <p> {vegan ? "Vegan" : null}</p>
-            <p> {vegetarian ? "Vegetarian" : null}</p>
-            <p> {nonvegetarian ? "Non-vegetarian": null}</p>
-            <p> {keto ? "Keto Friendly": null}</p> */}
+          
         </main>
      
     )

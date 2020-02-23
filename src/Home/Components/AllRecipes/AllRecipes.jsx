@@ -41,7 +41,7 @@ class AllRecipes extends React.Component {
             return (
             
                     <div className="recipeBox" key={index}>
-                        <img src={recipe.image} alt={recipe.title}></img>
+                     <a href = {recipe.url}>  <img src={recipe.image} alt={recipe.title}></img> </a> 
                         {recipe.title}
                         <br />
                         Calories: {recipe.calories}
